@@ -3,7 +3,8 @@ const Form = ({setCity}) => {
 
     const handleClickGetWeather = e => {
         e.preventDefault()
-        setCity(new String(e.target.city.value));
+        const city = e.target.city.value.trim();
+        setCity(new String(city));
     }
 
     return ( 
