@@ -38,7 +38,7 @@ const Weather = ({city}) => {
             //TODO
         }, cache_time);
         return () => clearInterval(interval);
-    })
+    }, [])
 
     return (
         <div className={'infoWeath'}>
