@@ -30,14 +30,15 @@ const Weather = ({city}) => {
 
     useEffect(() => {
         if(city){
-            const timeNow = Date.now();
-            const intervalRequest = timeNow - dataRequest;
-            if((intervalRequest>cache_time||dataRequest === 0)) {
-                getWeather();
-            }
+            getWeather();
         } 
     }, [city]);
-
+    useEffect(() => {
+        const interval = setInterval(() => {
+            //TODO
+        }, cache_time);
+        return () => clearInterval(interval);
+    })
 
     return (
         <div className={'infoWeath'}>
